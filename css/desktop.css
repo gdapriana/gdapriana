@@ -38,4 +38,36 @@
     #project-header, #skills-header, #contact-header {
         display: inline;
     }
+
+
+
+    /* ABOUT */
+    #about-title {
+        font-size: 30px;
+        margin: 23px 0;
+     }
+     
+     #about-desc {
+        font-size: 20px;
+     }
+
+     #more-about {
+        width: 230px;
+        height: 45px;
+     }
+     
+     #more-about a {
+        font-size: 24px;
+     }
+
+
+     /* EXPERIENCE */
+    #experience-section {
+        gap: 13px;
+    }
+    
+    #exp1, #exp2, #exp3 {
+        width: 250px;
+        height: 250px;
+    }
 }

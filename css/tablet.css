@@ -42,4 +42,37 @@
     #project-header {
         display: inline;
     }
+
+
+
+
+    /* ABOUT */
+     #about-title {
+        font-size: 20px;
+        margin: 15px 0;
+     }
+     
+     #about-desc {
+        font-size: 15px;
+     }
+
+     #more-about {
+        width: 175px;
+     }
+     
+     #more-about a {
+        font-size: 18px;
+     }
+
+
+
+     /* EXPERIENCE */
+    #experience-section {
+        gap: 10px;
+    }
+    
+    #exp1, #exp2, #exp3 {
+        width: 220px;
+        height: 220px;
+    }
 }
