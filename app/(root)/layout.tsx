@@ -12,9 +12,8 @@ export default function Layout({children}: { children: ReactNode }) {
   const { setProgress } = useContext(ProgressContext)
 
   const { scrollYProgress }: { scrollYProgress: any } = useScroll({ container: homeRef })
-  const scaleX: any = useSpring(scrollYProgress)
   useMotionValueEvent(scrollYProgress, "change", (current) => {
-    setProgress(scaleX.current);
+    setProgress(scrollYProgress.current);
   })
 
   return (
