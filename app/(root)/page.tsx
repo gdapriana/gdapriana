@@ -1,0 +1,11 @@
+import Hero from "@/app/(root)/_components/hero";
+import About from "@/app/(root)/_components/about";
+
+export default function Home() {
+  return (
+    <div className="w-full flex gap-16 flex-col justify-start items-stretch">
+      <Hero />
+      <About />
+    </div>
+  );
+}
