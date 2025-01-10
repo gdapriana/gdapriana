@@ -1,14 +1,26 @@
+'use client'
+
 import {cn} from "@/lib/utils";
 import Link from "next/link";
+import {useContext} from "react";
+import {ScrollContext} from "@/lib/scroll-context";
+import {ProgressContext} from "@/lib/progress-context";
+import {motion as m} from "framer-motion";
 
 export default function Header() {
+  const { progress } = useContext(ProgressContext);
+  const { scrolled } = useContext(ScrollContext)
+
   return (
-    <header className="p-6 md:px-20 md:py-8 w-full flex justify-between items-center">
+    <header className={cn("p-6 md:px-20 gap-12 border-stone-800 md:py-8 w-full flex justify-between items-center", scrolled && "border-b")}>
       <Brand
         full="Gede Apriana"
         short="GA"
         className="text-primary-foreground hover:text-muted-foreground duration-300 md:text-lg font-bold cursor-pointer"
       />
+      <div className="flex-1 h-[1px] overflow-hidden bg-stone-800">
+        <m.div animate={{ width: `${progress * 100}%` }} className="bg-muted-foreground h-[1px]"></m.div>
+      </div>
       <Nav />
     </header>
   )

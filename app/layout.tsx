@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import {ScrollProvider} from "@/lib/scroll-context";
+import {ProgressProvider} from "@/lib/progress-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,14 +23,18 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ScrollProvider>
+          <ProgressProvider>
+            {children}
+          </ProgressProvider>
+        </ScrollProvider>
       </body>
     </html>
   );
