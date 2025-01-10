@@ -15,32 +15,39 @@ const works = [
 export default function Work() {
 
   const headerRef = useRef(null);
-  const isInView = useInView(headerRef, { once: false });
+  const moreGithubRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: false });
+  const isMoreGithubInView = useInView(moreGithubRef, { once: false });
 
   return (
     <main className="relative">
       <div className={cn("sticky flex justify-center items-center p-6 md:px-20 md:py-8 top-0 md:h-[40vh] h-[20vh]", "bg-stone-950")}>
-        <m.h1 animate={isInView ? {letterSpacing: "2rem"} : {letterSpacing: "0"}} transition={{ duration: 1, ease: "circOut", delay: 0.5 }} ref={headerRef} className="text-primary-foreground font-bold text-2xl md:text-4xl">WORKS</m.h1>
+        <m.h1 animate={isHeaderInView ? {letterSpacing: "2rem"} : {letterSpacing: "0"}} transition={{ duration: 1, ease: "circOut", delay: 0.5 }} ref={headerRef} className="text-primary-foreground font-bold text-2xl md:text-4xl">WORKS</m.h1>
       </div>
       {works.map((work, index: number) => {
         return (
-          <Link href={work.repo} key={index} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-8 top-0 h-[20vh] md:h-[40vh]", work.bg, '')}>
+          <div key={index} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-8 top-0 h-[20vh] md:h-[40vh]", work.bg, '')}>
             <div className="flex-1 flex gap-4 flex-col justify-start items-stretch">
               <div className="flex justify-between items-center">
-                <h1 className="text-primary-foreground text-xl md:text-2xl font-bold">{work.name}</h1>
-                <h1 className="text-muted-foreground text-xl md:text-2xl font-bold">{work.year}</h1>
+                <Link href={work.repo} className="text-primary-foreground text-xl md:text-2xl font-bold">{work.name}</Link>
+                <h1 className="text-muted-foreground hidden md:inline text-xl md:text-2xl font-bold">{work.year}</h1>
               </div>
               <div className="flex gap-4 justify-start items-center">
                 {work.tech.map((tech, index: number) => {
                   return (
-                    <div key={index} className="text-primary-foreground py-2 px-4 border border-stone-800">{tech}</div>
+                    <div key={index} className="text-primary-foreground text-sm md:text-base py-2 px-4 border border-stone-800">{tech}</div>
                   )
                 })}
                 <div className="flex-1 h-[1px] bg-stone-800"></div>
               </div>
             </div>
             <Image src={work.image} alt="image" width={1920} height={1080} className="w-[400px] grayscale group-hover:grayscale-0 duration-300 hidden md:flex aspect-video object-cover"/>
-          </Link>
+            {works.length - 1 === index && (
+              <m.a animate={isMoreGithubInView ? { width: "300px", opacity: 1 }: { width: "0", opacity: 0 }} transition={{ duration: 1, ease: "anticipate" }} ref={moreGithubRef} href="https://github.com/gdapriana" className="h-full flex justify-center items-center">
+                <h1 className="md:text-base text-sm text-muted-foreground">MORE ON GITHUB</h1>
+              </m.a>
+            )}
+          </div>
         )
       })}
     </main>
