@@ -1,8 +1,25 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import {ArrowRight} from "lucide-react";
+import {
+  motion as m,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue, useMotionValueEvent, useInView
+} from "framer-motion";
+import {useContext, useRef} from "react";
+import {ProgressContext} from "@/lib/progress-context";
 
 export default function About() {
+
+  const { progress } = useContext(ProgressContext)
+
+  const imageRef = useRef(null)
+  const imageInVew = useInView(imageRef)
+
   return (
     <main className="md:h-[60vh] py-12 gap-16 md:pl-20 pl-8 pr-8 md:pr-0 flex md:flex-row flex-col md:justify-between justify-start md:items-start items-stretch overflow-hidden">
       <div className="md:h-full gap-8 flex md:w-1/2 flex-col justify-between items-start">
@@ -11,7 +28,7 @@ export default function About() {
       </div>
       
       <div className="md:h-full">
-        <Image className="grayscale md:h-full w-[200px] object-cover md:w-auto" src="/profile.jpg" alt="profile" width={1080} height={1920} />
+        <m.img ref={imageRef} animate={imageInVew && {y: `${progress*200}px`}} className="grayscale md:h-full w-[200px] object-cover md:w-auto" src="/profile.jpg" alt="profile" width={1080} height={1920} />
       </div>
     </main>
   )

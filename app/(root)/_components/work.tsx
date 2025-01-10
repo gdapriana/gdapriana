@@ -4,7 +4,7 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import {useRef} from "react";
-import {useInView, motion as m} from "framer-motion";
+import {useInView, motion as m, useTransform} from "framer-motion";
 
 const works = [
   {name: "Clickbait Detector", year: "2024", repo: "https://github.com/gdapriana/clickbait-detector-frontend", image: "https://github.com/gdapriana/clickbait-detector-frontend/raw/main/public/web.png", tech: ["Machine Learning", "Tensorflow"], bg: "bg-[#131316]"},
