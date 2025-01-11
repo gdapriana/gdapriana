@@ -35,7 +35,7 @@ export default function Work() {
               <div className="flex gap-4 flex-wrap justify-start items-center">
                 {work.tech.map((tech, index: number) => {
                   return (
-                    <div key={index} className="text-primary-foreground text-sm md:text-base py-2 px-4 border border-stone-800">{tech}</div>
+                    <div key={index} className="text-primary-foreground text-sm md:text-base py-2 px-4 border border-primary-foreground">{tech}</div>
                   )
                 })}
                 <div className="flex-1 h-[1px] bg-stone-800"></div>
@@ -50,6 +50,7 @@ export default function Work() {
           </div>
         )
       })}
+      <div className="md:h-[40vh] h-[20vh]"></div>
     </main>
   )
 }
