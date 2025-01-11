@@ -26,13 +26,13 @@ export default function Work() {
       </div>
       {works.map((work, index: number) => {
         return (
-          <div key={index} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-[20vh] md:h-[40vh]", work.bg, '')}>
+          <div key={index} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-auto md:h-[40vh]", work.bg, '')}>
             <div className="flex-1 flex gap-4 flex-col justify-start items-stretch">
               <div className="flex justify-between items-center">
-                <Link href={work.repo} className="text-primary-foreground text-xl md:text-2xl font-bold">{work.name}</Link>
+                <Link href={work.repo} className="text-primary-foreground text-xl md:text-2xl font-bold line-clamp-1">{work.name}</Link>
                 <h1 className="text-muted-foreground hidden md:inline text-xl md:text-2xl font-bold">{work.year}</h1>
               </div>
-              <div className="flex gap-4 justify-start items-center">
+              <div className="flex gap-4 flex-wrap justify-start items-center">
                 {work.tech.map((tech, index: number) => {
                   return (
                     <div key={index} className="text-primary-foreground text-sm md:text-base py-2 px-4 border border-stone-800">{tech}</div>
