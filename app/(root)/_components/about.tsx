@@ -24,7 +24,7 @@ export default function About() {
     <main className="md:h-[60vh] py-12 gap-16 md:pl-20 pl-8 pr-8 md:pr-0 flex md:flex-row flex-col md:justify-between justify-start md:items-start items-stretch overflow-hidden">
       <div className="md:h-full gap-8 flex md:w-1/2 flex-col justify-between items-start">
         <h3 className="text-muted-foreground text-xl md:text-2xl font-semibold">
-          {splitedText.map((word, index: number) => {
+          {splitedText.map((word: string, index: number) => {
             return <m.span ref={textRef} transition={{delay: index * 0.05, duration: 1, ease: "circOut"}} animate={textInView ? {color: "hsl(var(--primary-foreground))"}: {color: ""}} key={index}>{word} </m.span>
           })}
         </h3>

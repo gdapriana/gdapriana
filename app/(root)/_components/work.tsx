@@ -7,9 +7,9 @@ import {useRef} from "react";
 import {useInView, motion as m, useTransform} from "framer-motion";
 
 const works = [
-  {name: "Clickbait Detector", year: "2024", repo: "https://github.com/gdapriana/clickbait-detector-frontend", image: "https://github.com/gdapriana/clickbait-detector-frontend/raw/main/public/web.png", tech: ["Machine Learning", "Tensorflow"], bg: "bg-[#131316]"},
-  {name: "Kelayakan Pinjaman", year: "2024", repo: "https://github.com/gdapriana/kelayakan-pinjaman-frontend", image: "https://github.com/gdapriana/kelayakan-pinjaman-frontend/raw/main/public/web.png", tech: ["Fuzzy", "Python"], bg: "bg-[#1c1c21]"},
-  {name: "Housing Price Regression", year: "2024", repo: "https://github.com/gdapriana/housing-price-regression", image: "https://github.com/gdapriana/housing-price-regression/raw/main/sources/capture.png", tech: ["Machine Learning", "Scikit-learn"], bg: "bg-[#26262d]"},
+  {name: "Clickbait Detector", year: "2024", repo: "https://github.com/gdapriana/clickbait-detector-frontend", image: "https://github.com/gdapriana/clickbait-detector-frontend/raw/main/public/web.png", tech: ["Machine Learning", "Tensorflow"], bg: "bg-[#0F0D0C]"},
+  {name: "Kelayakan Pinjaman", year: "2024", repo: "https://github.com/gdapriana/kelayakan-pinjaman-frontend", image: "https://github.com/gdapriana/kelayakan-pinjaman-frontend/raw/main/public/web.png", tech: ["Fuzzy", "Python"], bg: "bg-[#141210]"},
+  {name: "Housing Price Regression", year: "2024", repo: "https://github.com/gdapriana/housing-price-regression", image: "https://github.com/gdapriana/housing-price-regression/raw/main/sources/capture.png", tech: ["Machine Learning", "Scikit-learn"], bg: "bg-[#191614]"},
 ]
 
 export default function Work() {
@@ -35,7 +35,7 @@ export default function Work() {
               <div className="flex gap-4 flex-wrap justify-start items-center">
                 {work.tech.map((tech, index: number) => {
                   return (
-                    <div key={index} className="text-primary-foreground text-sm md:text-base py-2 px-4 border border-primary-foreground">{tech}</div>
+                    <div key={index} className="text-muted-foreground text-sm md:text-base py-2 px-4 border border-stone-800">{tech}</div>
                   )
                 })}
                 <div className="flex-1 h-[1px] bg-stone-800"></div>
