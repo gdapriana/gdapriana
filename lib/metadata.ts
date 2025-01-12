@@ -41,9 +41,9 @@ export const experiences: Experience[] = [
 ]
 
 export const contact: Contact = {
-  whatsapp: "https:wa.me/6281339486902",
+  whatsapp: "https://wa.me/6281339486902",
   instagram: "https://instagram.com/gdapriana",
-  github: "https://github.com/gdapriana",
+  github: "https://github.com/gdaprianaa",
   cv: "https://drive.google.com/file/d/1yO3puA-Qqqko8UTIywSGiBUy_RyPpuhS/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/komang-apriana/",
 }
