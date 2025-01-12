@@ -6,6 +6,7 @@ import {useContext} from "react";
 import {ScrollContext} from "@/lib/scroll-context";
 import {ProgressContext} from "@/lib/progress-context";
 import {motion as m} from "framer-motion";
+import {header} from "@/lib/metadata";
 
 export default function Header() {
   const { progress } = useContext(ProgressContext);
@@ -14,8 +15,8 @@ export default function Header() {
   return (
     <header className={cn("p-6 md:px-20 gap-12 border-stone-800 md:py-8 w-full flex justify-between items-center", scrolled && "border-b")}>
       <Brand
-        full="Gede Apriana"
-        short="GA"
+        full={header.brand.full}
+        short={header.brand.short}
         className="text-primary-foreground hover:text-muted-foreground duration-300 md:text-lg font-bold cursor-pointer"
       />
       <div className="flex-1 h-[1px] overflow-hidden bg-stone-800">
@@ -36,11 +37,7 @@ export const Brand = ({ full, short, className }: {full: string; short: string; 
 }
 
 const Nav = () => {
-  const items = [
-    {name: "About", path: "#__about", className: "hidden md:inline" },
-    {name: "Work", path: "#__work", className: "hidden md:inline" },
-    {name: "Contact", path: "#__contact", className: ""},
-  ]
+  const items = header.navigations
   return (
     <main className="flex justify-center items-center gap-12">
       {items.map((item, index) => {

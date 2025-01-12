@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import {useContext, useRef} from "react";
 import {ProgressContext} from "@/lib/progress-context";
+import { about} from "@/lib/metadata";
 
 export default function About() {
 
@@ -15,7 +16,7 @@ export default function About() {
 
   const imageRef = useRef(null)
   const imageInVew = useInView(imageRef)
-  const text = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur fugit illum neque nobis praesentium, quibusdam saepe! Aliquam cumque deleniti impedit incidunt natus nemo placeat quasi quis suscipit ut! Alias amet esse illo ipsam minima provident quas ratione repudiandae, sunt?"
+  const text = about.text
   const splitedText = text.split(" ")
   const textRef = useRef(null)
   const textInView = useInView(textRef)
@@ -28,11 +29,11 @@ export default function About() {
             return <m.span ref={textRef} transition={{delay: index * 0.05, duration: 1, ease: "circOut"}} animate={textInView ? {color: "hsl(var(--primary-foreground))"}: {color: ""}} key={index}>{word} </m.span>
           })}
         </h3>
-        <Link className="flex border-b pb-4 justify-center items-center gap-2 hover:border-b border-stone-950 hover:border-stone-800 text-primary-foreground" href="#">CONTACT ME <ArrowRight /></Link>
+        <Link className="flex border-b pb-4 justify-center items-center gap-2 hover:border-b border-stone-950 hover:border-stone-800 text-primary-foreground" href="#__contact">CONTACT ME <ArrowRight /></Link>
       </div>
       
       <div className="md:h-full">
-        <m.img ref={imageRef} animate={imageInVew && {y: `${progress*200}px`}} className="grayscale md:h-full w-[200px] object-cover md:w-auto" src="/profile.jpg" alt="profile" width={1080} height={1920} />
+        <m.img ref={imageRef} animate={imageInVew && {y: `${progress*200}px`}} className="grayscale md:h-full w-[200px] object-cover md:w-auto" src={about.photo_link} alt="profile" width={1080} height={1920} />
       </div>
     </main>
   )

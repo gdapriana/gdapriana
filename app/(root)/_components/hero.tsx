@@ -5,11 +5,12 @@ import {JetBrains_Mono} from "next/font/google";
 import {cn} from "@/lib/utils";
 import {useRef} from "react";
 import { motion as m } from "framer-motion";
+import {header, hero} from "@/lib/metadata";
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ["300"] })
 
 export default function Hero() {
-  const text: string = "Fullstack and Machine Learning Developer"
+  const text: string = hero.intro
   const splittedText = text.split(' ');
 
   const pullupVariant = {
@@ -31,10 +32,10 @@ export default function Hero() {
     <main className="h-[80vh] p-6 md:px-20 md:py-8 flex flex-col justify-between items-start">
       <m.div animate={{opacity: [0, 1]}} transition={{duration: 1, ease: "circOut", delay: 1}} className="flex justify-center items-center gap-8">
         <Avatar className="h-20 w-20 grayscale">
-          <AvatarImage src="https://lh3.googleusercontent.com/a/ACg8ocJv5Hn06WMGJPugcK2tMm9XrIPDSopUrUBlaBrt5wPFiraarNDKmA=s576-c-no" />
-          <AvatarFallback>GA</AvatarFallback>
+          <AvatarImage src={hero.photo_link} />
+          <AvatarFallback>{header.brand.short}</AvatarFallback>
         </Avatar>
-        <p className={cn("text-muted-foreground text-sm max-w-96 w-full", jetBrainsMono.className)}>I Connect with creators and builders to design and develop Framer websites reaching goals and delivering the message</p>
+        <p className={cn("text-muted-foreground text-sm max-w-96 w-full", jetBrainsMono.className)}>{hero.highlight}</p>
       </m.div>
 
       <div className="flex w-full gap-10 flex-col justify-center items-stretch">
@@ -58,11 +59,11 @@ export default function Hero() {
         </div>
 
         <div className="flex md:justify-between md:flex-row flex-col items-stretch justify-start md:items-center gap-4">
-          <h3 className="text-muted-foreground whitespace-nowrap">Gianyar, Bali</h3>
+          <h3 className="text-muted-foreground whitespace-nowrap">{hero.location}</h3>
           <div className="w-full h-[1px] bg-stone-800"/>
-          <h3 className="text-muted-foreground whitespace-nowrap">GMT 8+</h3>
+          <h3 className="text-muted-foreground whitespace-nowrap">{hero.time_zone}</h3>
           <div className="w-full h-[1px] bg-stone-800"/>
-          <h3 className="text-muted-foreground whitespace-nowrap">AVAILABLE</h3>
+          <h3 className="text-muted-foreground whitespace-nowrap">{hero.status}</h3>
         </div>
       </div>
     </main>
