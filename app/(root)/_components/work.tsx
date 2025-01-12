@@ -21,7 +21,7 @@ export default function Work() {
 
   return (
     <main className="relative">
-      <div className={cn("sticky flex justify-center items-center p-6 md:px-20 md:py-8 top-0 md:h-[40vh] h-[20vh]", "bg-stone-950")}>
+      <div className={cn("sticky flex justify-center items-center p-6 md:px-20 md:py-8 top-0 md:h-[40vh] h-[20vh]", "bg-primary")}>
         <m.h1 animate={isHeaderInView ? {letterSpacing: "2rem"} : {letterSpacing: "0"}} transition={{ duration: 1, ease: "circOut", delay: 0.5 }} ref={headerRef} className="text-primary-foreground font-bold text-2xl md:text-4xl">WORKS</m.h1>
       </div>
       {works.map((work, index: number) => {
