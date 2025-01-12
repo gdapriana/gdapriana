@@ -4,7 +4,7 @@ import {cn} from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import {useRef} from "react";
-import {useInView, motion as m, useTransform} from "framer-motion";
+import {useInView, motion as m} from "framer-motion";
 import {contact, works} from "@/lib/metadata";
 import { Work } from "@/lib/types";
 
@@ -14,6 +14,9 @@ export default function Works() {
   const isHeaderInView = useInView(headerRef, { once: false });
   const isMoreGithubInView = useInView(moreGithubRef, { once: false });
 
+  const topWorkRef = useRef(null);
+  const isTopWorkInView = useInView(topWorkRef, { once: false });
+
   return (
     <main id="__work" className="relative">
       <div className={cn("sticky flex justify-center items-center p-6 md:px-20 md:py-8 top-0 md:h-[40vh] h-[20vh]", "bg-primary")}>
@@ -21,7 +24,7 @@ export default function Works() {
       </div>
       {works.map((work: Work, index: number) => {
         return (
-          <div key={index} style={{ backgroundColor: work.bg }} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-auto md:h-[40vh]")}>
+          <m.div key={index} ref={index === 0 ? topWorkRef : null} animate={index === 0 && isTopWorkInView ? {borderTop: "1px solid #292524"} : {borderTop: "0px"}} transition={{delay: 1}} style={{ backgroundColor: work.bg }} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-auto md:h-[40vh]")}>
             <div className="flex-1 flex gap-4 flex-col justify-start items-stretch">
               <div className="flex justify-between items-center">
                 <Link href={work.repo} className="text-primary-foreground text-xl md:text-2xl font-bold line-clamp-1">{work.name}</Link>
@@ -44,7 +47,7 @@ export default function Works() {
                 <h1 className="md:text-base text-sm text-muted-foreground">MORE ON GITHUB</h1>
               </m.a>
             )}
-          </div>
+          </m.div>
         )
       })}
       <div className="md:h-[40vh] h-[20vh]"></div>
