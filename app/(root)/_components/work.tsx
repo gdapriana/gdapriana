@@ -21,7 +21,7 @@ export default function Works() {
       </div>
       {works.map((work: Work, index: number) => {
         return (
-          <div key={index} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-auto md:h-[40vh]", work.bg, '')}>
+          <div key={index} style={{ backgroundColor: work.bg }} className={cn("sticky gap-8 group flex justify-center items-start p-6 md:px-20 md:py-12 top-0 h-auto md:h-[40vh]")}>
             <div className="flex-1 flex gap-4 flex-col justify-start items-stretch">
               <div className="flex justify-between items-center">
                 <Link href={work.repo} className="text-primary-foreground text-xl md:text-2xl font-bold line-clamp-1">{work.name}</Link>

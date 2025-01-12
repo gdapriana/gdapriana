@@ -28,9 +28,9 @@ export const about: About = {
 }
 
 export const works: Work[] = [
-  {name: "Clickbait Detector", year: "2024", repo: "https://github.com/gdapriana/clickbait-detector-frontend", image: "https://github.com/gdapriana/clickbait-detector-frontend/raw/main/public/web.png", tech: ["Machine Learning", "Tensorflow"], bg: "bg-[#0F0D0C]"},
-  {name: "Kelayakan Pinjaman", year: "2024", repo: "https://github.com/gdapriana/kelayakan-pinjaman-frontend", image: "https://github.com/gdapriana/kelayakan-pinjaman-frontend/raw/main/public/web.png", tech: ["Fuzzy", "Python"], bg: "bg-[#141210]"},
-  {name: "Housing Price Regression", year: "2024", repo: "https://github.com/gdapriana/housing-price-regression", image: "https://github.com/gdapriana/housing-price-regression/raw/main/sources/capture.png", tech: ["Machine Learning", "Scikit-learn"], bg: "bg-[#191614]"},
+  {name: "Clickbait Detector", year: "2024", repo: "https://github.com/gdapriana/clickbait-detector-frontend", image: "https://github.com/gdapriana/clickbait-detector-frontend/raw/main/public/web.png", tech: ["Machine Learning", "Tensorflow"], bg: "#0F0D0C"},
+  {name: "Kelayakan Pinjaman", year: "2024", repo: "https://github.com/gdapriana/kelayakan-pinjaman-frontend", image: "https://github.com/gdapriana/kelayakan-pinjaman-frontend/raw/main/public/web.png", tech: ["Fuzzy", "Python"], bg: "#141210"},
+  {name: "Housing Price Regression", year: "2024", repo: "https://github.com/gdapriana/housing-price-regression", image: "https://github.com/gdapriana/housing-price-regression/raw/main/sources/capture.png", tech: ["Machine Learning", "Scikit-learn"], bg: "#191614"},
 ]
 
 export const experiences: Experience[] = [
