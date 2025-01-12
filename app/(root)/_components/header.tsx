@@ -37,9 +37,9 @@ export const Brand = ({ full, short, className }: {full: string; short: string; 
 
 const Nav = () => {
   const items = [
-    {name: "Work", path: "/work", className: "hidden md:inline" },
-    {name: "About", path: "/about", className: "hidden md:inline" },
-    {name: "Contact", path: "/contact", className: ""},
+    {name: "About", path: "#__about", className: "hidden md:inline" },
+    {name: "Work", path: "#__work", className: "hidden md:inline" },
+    {name: "Contact", path: "#__contact", className: ""},
   ]
   return (
     <main className="flex justify-center items-center gap-12">

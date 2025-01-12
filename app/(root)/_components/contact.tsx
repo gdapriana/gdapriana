@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Contact() {
   return (
-    <main className="md:p-20 p-8 h-[70vh] flex gap-8 flex-col justify-between items-stretch">
+    <main id="__contact" className="md:p-20 p-8 h-[70vh] flex gap-8 flex-col justify-between items-stretch">
       <h1 className="text-primary-foreground text-[2rem] text-end font-bold md:text-[4rem]">Let's Connect</h1>
       <p className="w-[80%] mt-auto text-xl text-muted-foreground md:text-3xl">Feel free to contact me if having any questions. I'm available for new projects or just for chatting.</p>
       <div className="grid lg:grid-cols-3 lg:grid-rows-1 grid-cols-1 grid-rows-3">

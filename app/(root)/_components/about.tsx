@@ -21,7 +21,7 @@ export default function About() {
   const textInView = useInView(textRef)
 
   return (
-    <main className="md:h-[60vh] py-12 gap-16 md:pl-20 pl-8 pr-8 md:pr-0 flex md:flex-row flex-col md:justify-between justify-start md:items-start items-stretch overflow-hidden">
+    <main id="__about" className="md:h-[60vh] py-12 gap-16 md:pl-20 pl-8 pr-8 md:pr-0 flex md:flex-row flex-col md:justify-between justify-start md:items-start items-stretch overflow-hidden">
       <div className="md:h-full gap-8 flex md:w-1/2 flex-col justify-between items-start">
         <h3 className="text-muted-foreground text-xl md:text-2xl font-semibold">
           {splitedText.map((word: string, index: number) => {
