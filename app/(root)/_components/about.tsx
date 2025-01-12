@@ -33,7 +33,7 @@ export default function About() {
       </div>
       
       <div className="md:h-full">
-        <m.img ref={imageRef} animate={imageInVew && {y: `${progress*200}px`}} className="grayscale md:h-full w-[200px] object-cover md:w-auto" src={about.photo_link} alt="profile" width={1080} height={1920} />
+        <m.img ref={imageRef} animate={imageInVew && {y: `${progress*400}px`}} className="grayscale md:h-full w-[200px] object-cover md:w-auto" src={about.photo_link} alt="profile" width={1080} height={1920} />
       </div>
     </main>
   )
