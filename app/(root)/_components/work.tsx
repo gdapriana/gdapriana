@@ -3,16 +3,18 @@
 import {cn} from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import {useRef} from "react";
+import {useContext, useRef} from "react";
 import {useInView, motion as m} from "framer-motion";
 import {contact, works} from "@/lib/metadata";
 import { Work } from "@/lib/types";
+import {ProgressContext} from "@/lib/progress-context";
 
 export default function Works() {
   const headerRef = useRef(null);
   const moreGithubRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: false });
   const isMoreGithubInView = useInView(moreGithubRef, { once: false });
+  const { progress } = useContext(ProgressContext)
 
   const topWorkRef = useRef(null);
   const isTopWorkInView = useInView(topWorkRef, { once: false });
@@ -20,7 +22,7 @@ export default function Works() {
   return (
     <main id="__work" className="relative">
       <div className={cn("sticky flex justify-center items-center p-6 md:px-20 md:py-8 top-0 md:h-[40vh] h-[20vh]", "bg-primary")}>
-        <m.h1 animate={isHeaderInView ? {letterSpacing: "2rem"} : {letterSpacing: "0"}} transition={{ duration: 1, ease: "circOut", delay: 0.5 }} ref={headerRef} className="text-primary-foreground font-bold text-2xl md:text-4xl">WORKS</m.h1>
+        <m.h1 animate={isHeaderInView && {letterSpacing: `${progress * 200}px`}} transition={{ duration: 1, ease: "circOut" }} ref={headerRef} className="text-primary-foreground font-bold text-2xl md:text-4xl">WORKS</m.h1>
       </div>
       {works.map((work: Work, index: number) => {
         return (
