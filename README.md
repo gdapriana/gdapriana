@@ -12,10 +12,10 @@ I'm a passionate developer who loves creating elegant solutions to complex probl
 
 ```javascript
 const developer = {
-  name: "Your Name",
-  location: "Your City, Country",
+  name: "I Komang Gede Apriana",
+  location: "Gianyar, Bali",
   languages: ["JavaScript", "Python", "TypeScript"],
-  interests: ["Web Development", "Open Source", "Design"],
+  interests: ["Web Development", "Machine Learning", "Design"],
   currentlyLearning: "Next.js & System Design",
 };
 ```
