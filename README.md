@@ -1,12 +1,5 @@
 # Hello, I'm Gede Apriana 👋
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=300&size=24&pause=1000&color=6B73FF&center=true&vCenter=true&width=435&lines=Software+Developer;Creative+Problem+Solver;Lifelong+Learner" alt="Typing SVG" />
-</div>
-
-<br/>
-
-## About Me
 
 I'm a passionate developer who loves creating elegant solutions to complex problems. I believe in writing clean, maintainable code and continuously learning new technologies.
 
