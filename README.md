@@ -26,17 +26,6 @@ const developer = {
 **Tools & Platforms**  
 `Git` `Docker` `AWS` `MongoDB` `PostgreSQL`
 
-<br/>
-
-## GitHub Stats
-
-<div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=YourUsername&show_icons=true&theme=minimal&hide_border=true&bg_color=f8f9fa"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YourUsername&layout=compact&theme=minimal&hide_border=true&bg_color=f8f9fa"/>
-</div>
-
-<br/>
-
 ## Get In Touch
 
 - 📧 Email: gedeapriana@gmail.com
